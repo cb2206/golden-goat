@@ -273,6 +273,9 @@ Shared by goat & car each frame for the active entity:
 ---
 
 ## 13. Changelog (most recent first)
+- **Menu camera fix:** the start/game-over screens used the default camera at the origin
+  (buried inside spawn-area buildings → black walls). Added `updateMenuCamera`: a slow
+  cinematic aerial orbit over the city/lake as the menu backdrop (runs while `!playing`).
 - **Pause + touch + publish:** added pause mode (`P`/`Esc`/⏸ button, freezes loop &
   mutes music); on-screen touch controls (virtual joystick + action buttons) auto-enabled
   on phones/tablets; published to a public GitHub repo + GitHub Pages. Added a custom

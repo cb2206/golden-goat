@@ -749,6 +749,7 @@ const goatState = {
 };
 goatState.y = terrainHeight(goatState.pos.x, goatState.pos.z);
 goatState.prevGround = goatState.y;
+goat.position.set(goatState.pos.x, goatState.y, goatState.pos.z);   // place the goat for the menu camera
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  People — detailed civilians + police
@@ -1679,6 +1680,15 @@ function updateCamera(dt) {
   camera.lookAt(target.x, target.y + lookH, target.z);
   sun.position.set(target.x + 80, 130, target.z + 50); sun.target.position.copy(target); sun.target.updateMatrixWorld();
 }
+// cinematic aerial pan over the city/lake for the start / game-over menus
+let menuAngle = 0.4;
+function updateMenuCamera(dt) {
+  menuAngle += dt * 0.05;
+  const cx = 110, cz = -110, cy = 4, radius = 125, height = 82;   // high orbit over the lake district
+  camera.position.set(cx + Math.sin(menuAngle) * radius, cy + height, cz + Math.cos(menuAngle) * radius);
+  camera.lookAt(cx, cy + 8, cz);
+  sun.position.set(cx + 90, 170, cz + 60); sun.target.position.set(cx, cy, cz); sun.target.updateMatrixWorld();
+}
 function updateBossArrow() {
   if (!boss) { bossArrowEl.style.opacity = 0; return; }
   const dx = boss.mesh.position.x - goat.position.x, dz = boss.mesh.position.z - goat.position.z;
@@ -1719,6 +1729,7 @@ function update(dt) {
 function animate() {
   const dt = Math.min(clock.getDelta(), 0.05);
   if (playing && !paused) update(dt);
+  else if (!playing) updateMenuCamera(dt);   // gentle orbit on the start / game-over screen
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
 }
