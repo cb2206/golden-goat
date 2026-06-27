@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
@@ -127,19 +127,19 @@
 <div id="flash"></div>
 
 <div id="hud">
-  <div id="score">0 <small>Punkte</small></div>
+  <div id="score">0 <small data-i18n="points">points</small></div>
   <div id="combo"></div>
   <div id="goal"></div>
 </div>
 <div id="timerbox">
-  <div id="timer">120<small>Sekunden</small></div>
+  <div id="timer">120<small data-i18n="seconds">seconds</small></div>
   <div id="best">🏆 Best: 0</div>
 </div>
-<div id="bossbar"><div id="bossbarfill"></div><span id="bosslabel">👹 BAUER-BOSS</span></div>
+<div id="bossbar"><div id="bossbarfill"></div><span id="bosslabel" data-i18n="bossLabel">👹 FARMER BOSS</span></div>
 <div id="bossarrow"><div id="bossarrowinner">⬆️</div><div id="bossdist"></div></div>
 <div id="inv">
-  <div class="slot hand" id="slotHand"><span class="lbl">✋ Hand · F</span><span class="content" id="handContent">–</span></div>
-  <div class="slot" id="slotBack"><span class="lbl">🎒 Rücken · Q</span><span class="content" id="backContent">–</span></div>
+  <div class="slot hand" id="slotHand"><span class="lbl" data-i18n="handLbl">✋ Hand · F</span><span class="content" id="handContent">–</span></div>
+  <div class="slot" id="slotBack"><span class="lbl" data-i18n="backLbl">🎒 Back · Q</span><span class="content" id="backContent">–</span></div>
 </div>
 <div id="incar"></div>
 <div id="toast"></div>
@@ -148,42 +148,42 @@
 <div id="touch">
   <div id="joy"><div id="joyKnob"></div></div>
   <div id="btns">
-    <div class="tbtn" data-act="jump" title="Springen">⤴</div>
-    <div class="tbtn" data-act="mega" title="Mega-Stoß / Turbo">💥</div>
-    <div class="tbtn" data-act="car" title="Auto ein/aussteigen">🚗</div>
-    <div class="tbtn" data-act="shoot" title="Schießen">🔫</div>
-    <div class="tbtn" data-act="swap" title="Inventar tauschen">🔄</div>
+    <div class="tbtn" data-act="jump" data-i18n-title="tTitleJump" title="Jump">⤴</div>
+    <div class="tbtn" data-act="mega" data-i18n-title="tTitleMega" title="Mega-smash / Turbo">💥</div>
+    <div class="tbtn" data-act="car" data-i18n-title="tTitleCar" title="Enter/exit car">🚗</div>
+    <div class="tbtn" data-act="shoot" data-i18n-title="tTitleShoot" title="Shoot">🔫</div>
+    <div class="tbtn" data-act="swap" data-i18n-title="tTitleSwap" title="Swap inventory">🔄</div>
   </div>
 </div>
 
-<div id="help">
-  <b>W/S</b> fahren · <b>A/D</b> lenken · <b>Leertaste</b> Springen · <b>Shift</b> MEGA-STOSS 💥 ·
-  <b>E</b> Auto · <b>F</b> schießen · <b>Q</b> tauschen · <b>P</b> Pause
+<div id="help" data-i18n="help">
+  <b>W/S</b> drive · <b>A/D</b> steer · <b>Space</b> jump · <b>Shift</b> MEGA-SMASH 💥 ·
+  <b>E</b> car · <b>F</b> shoot · <b>Q</b> swap · <b>P</b> pause
 </div>
 
 <div id="overlay" class="overlay">
   <h1>🐐 GOLDEN GOAT</h1>
-  <p>Stoße Leute &amp; Objekte um! Deine Hörner treffen automatisch. 🚓 <b>Polizisten</b> nur mit <b>Shift = Mega-Stoß</b>.</p>
-  <p style="opacity:.8">🔫 Finde <b>Pistolen in Häusern</b> · Inventar: <b>Hand (F = schießen)</b> &amp; <b>Rücken (Q = tauschen)</b></p>
+  <p data-i18n="intro1">Knock people &amp; objects over! Your horns hit automatically. 🚓 <b>Police</b> only with <b>Shift = mega-smash</b>.</p>
+  <p style="opacity:.8" data-i18n="intro2">🔫 Find <b>pistols in houses</b> · Inventory: <b>Hand (F = shoot)</b> &amp; <b>Back (Q = swap)</b></p>
   <div class="modes">
-    <div class="play" data-mode="time">⏱️ ZEITRENNEN<small>120 Sekunden – maximale Punktzahl</small></div>
-    <div class="play" data-mode="boss">👹 BOSS-MODUS<small>1000 Punkte → Endboss! Bei 0 Punkten verlierst du</small></div>
+    <div class="play" data-mode="time" data-i18n="modeTime">⏱️ TIME TRIAL<small>120 seconds – maximum score</small></div>
+    <div class="play" data-mode="boss" data-i18n="modeBoss">👹 BOSS MODE<small>1000 points → final boss! At 0 points you lose</small></div>
   </div>
 </div>
 
 <div id="pause" class="overlay hidden">
-  <h1>⏸ PAUSE</h1>
-  <p>Tippe / klicke oder drücke <b>P</b> zum Fortsetzen</p>
-  <div class="play">▶ FORTSETZEN</div>
+  <h1 data-i18n="pauseTitle">⏸ PAUSE</h1>
+  <p data-i18n="pauseHint">Tap / click or press <b>P</b> to resume</p>
+  <div class="play" data-i18n="pauseResume">▶ RESUME</div>
 </div>
 
 <div id="gameover" class="overlay hidden">
-  <h2 id="overTitle">⏱️ ZEIT UM!</h2>
-  <p id="overSub">Dein Ergebnis</p>
-  <p class="big" id="finalScore">0 Punkte</p>
-  <p id="newbest" style="color:#ffe066; display:none">🏆 NEUER REKORD!</p>
-  <p id="bestLine" style="opacity:.85">Bester: 0</p>
-  <div class="play">↻ NOCHMAL SPIELEN</div>
+  <h2 id="overTitle" data-i18n="overTime">⏱️ TIME UP!</h2>
+  <p id="overSub" data-i18n="overSubTime">Your result</p>
+  <p class="big" id="finalScore">0 points</p>
+  <p id="newbest" style="color:#ffe066; display:none" data-i18n="newRecord">🏆 NEW RECORD!</p>
+  <p id="bestLine" style="opacity:.85">Best: 0</p>
+  <div class="play" data-i18n="playAgain">↻ PLAY AGAIN</div>
 </div>
 
 <script type="importmap">
@@ -192,6 +192,109 @@
 
 <script type="module">
 import * as THREE from 'three';
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  i18n — English by default; German when the browser asks for it (fallback: EN)
+// ─────────────────────────────────────────────────────────────────────────────
+const LANG = (navigator.language || navigator.userLanguage || 'en').toLowerCase().startsWith('de') ? 'de' : 'en';
+const STR = {
+  en: {
+    points: 'points',
+    seconds: 'seconds',
+    best: b => `🏆 Best: ${b}`,
+    handLbl: '✋ Hand · F',
+    backLbl: '🎒 Back · Q',
+    tTitleJump: 'Jump', tTitleMega: 'Mega-smash / Turbo', tTitleCar: 'Enter/exit car', tTitleShoot: 'Shoot', tTitleSwap: 'Swap inventory',
+    help: '<b>W/S</b> drive · <b>A/D</b> steer · <b>Space</b> jump · <b>Shift</b> MEGA-SMASH 💥 · <b>E</b> car · <b>F</b> shoot · <b>Q</b> swap · <b>P</b> pause',
+    bossLabel: '👹 FARMER BOSS',
+    intro1: 'Knock people &amp; objects over! Your horns hit automatically. 🚓 <b>Police</b> only with <b>Shift = mega-smash</b>.',
+    intro2: '🔫 Find <b>pistols in houses</b> · Inventory: <b>Hand (F = shoot)</b> &amp; <b>Back (Q = swap)</b>',
+    modeTime: '⏱️ TIME TRIAL<small>120 seconds – maximum score</small>',
+    modeBoss: '👹 BOSS MODE<small>1000 points → final boss! At 0 points you lose</small>',
+    pauseTitle: '⏸ PAUSE',
+    pauseHint: 'Tap / click or press <b>P</b> to resume',
+    pauseResume: '▶ RESUME',
+    overTime: '⏱️ TIME UP!',
+    overSubTime: 'Your result',
+    newRecord: '🏆 NEW RECORD!',
+    playAgain: '↻ PLAY AGAIN',
+    finalScore: s => `${s} points`,
+    bestLine: b => `Best: ${b}`,
+    bossDefeatGoal: '👹 Defeat the boss – ram it 🚗 or shoot it 🔫!',
+    bossAppears: '👹 THE FARMER BOSS APPEARS!',
+    bossGoal: g => `🎯 Reach ${g} points → final boss!`,
+    bossMode: '👹 BOSS MODE',
+    bossProgress: (s, g) => `🎯 ${s} / ${g} → final boss`,
+    watchOut: e => `${e} WATCH OUT!`,
+    hit: (e, d) => `${e} HIT! -${d}`,
+    scoreHTML: s => `${s} <small>points</small>`,
+    comboHTML: (c, g) => `${c}× Combo!  +${g}`,
+    niceRun: 'NICE RUN!',
+    rampage: 'RAMPAGE GOAT! 🐐',
+    legendary: 'LEGENDARY!!!',
+    mk2: 'DOUBLE SMASH! +20', mk4: 'MULTI SMASH! +50', mk7: '💥 MASSACRE!! +120', mk12: '🐐 UNSTOPPABLE!! +300',
+    bossBeaten: '🏆 BOSS DEFEATED!', bossBeatenSub: 'You won!',
+    lost: '💀 DEFEATED!', lostSub: 'The boss beat you',
+    pickedUp: e => `${e} picked up!`,
+    policeKO: '💥 POLICE KNOCKED OUT!', megaSmash: '💥 MEGA-SMASH!',
+    carStolen: '🚗 CAR STOLEN! Get in with E',
+    carWrecked: '💥 CAR WRECKED!',
+    inCar: n => `🚗 <b>E</b> exit · <b>W/S</b> gas · <b>Shift</b> turbo &nbsp;|&nbsp; 🌳 ${n}/5`,
+    caught: '🚓 CAUGHT! -20',
+    runOver: '🚗 RUN OVER! -15',
+    timerHTML: s => `${s}<small>seconds</small>`,
+  },
+  de: {
+    points: 'Punkte',
+    seconds: 'Sekunden',
+    best: b => `🏆 Best: ${b}`,
+    handLbl: '✋ Hand · F',
+    backLbl: '🎒 Rücken · Q',
+    tTitleJump: 'Springen', tTitleMega: 'Mega-Stoß / Turbo', tTitleCar: 'Auto ein/aussteigen', tTitleShoot: 'Schießen', tTitleSwap: 'Inventar tauschen',
+    help: '<b>W/S</b> fahren · <b>A/D</b> lenken · <b>Leertaste</b> Springen · <b>Shift</b> MEGA-STOSS 💥 · <b>E</b> Auto · <b>F</b> schießen · <b>Q</b> tauschen · <b>P</b> Pause',
+    bossLabel: '👹 BAUER-BOSS',
+    intro1: 'Stoße Leute &amp; Objekte um! Deine Hörner treffen automatisch. 🚓 <b>Polizisten</b> nur mit <b>Shift = Mega-Stoß</b>.',
+    intro2: '🔫 Finde <b>Pistolen in Häusern</b> · Inventar: <b>Hand (F = schießen)</b> &amp; <b>Rücken (Q = tauschen)</b>',
+    modeTime: '⏱️ ZEITRENNEN<small>120 Sekunden – maximale Punktzahl</small>',
+    modeBoss: '👹 BOSS-MODUS<small>1000 Punkte → Endboss! Bei 0 Punkten verlierst du</small>',
+    pauseTitle: '⏸ PAUSE',
+    pauseHint: 'Tippe / klicke oder drücke <b>P</b> zum Fortsetzen',
+    pauseResume: '▶ FORTSETZEN',
+    overTime: '⏱️ ZEIT UM!',
+    overSubTime: 'Dein Ergebnis',
+    newRecord: '🏆 NEUER REKORD!',
+    playAgain: '↻ NOCHMAL SPIELEN',
+    finalScore: s => `${s} Punkte`,
+    bestLine: b => `Bester: ${b}`,
+    bossDefeatGoal: '👹 Besiege den Boss – anfahren 🚗 oder abschießen 🔫!',
+    bossAppears: '👹 DER BAUER-BOSS ERSCHEINT!',
+    bossGoal: g => `🎯 Erreiche ${g} Punkte → Endboss!`,
+    bossMode: '👹 BOSS-MODUS',
+    bossProgress: (s, g) => `🎯 ${s} / ${g} → Endboss`,
+    watchOut: e => `${e} ACHTUNG!`,
+    hit: (e, d) => `${e} GETROFFEN! -${d}`,
+    scoreHTML: s => `${s} <small>Punkte</small>`,
+    comboHTML: (c, g) => `${c}× Combo!  +${g}`,
+    niceRun: 'SCHÖNER LAUF!',
+    rampage: 'AMOK-ZIEGE! 🐐',
+    legendary: 'LEGENDÄR!!!',
+    mk2: 'DOPPEL-STOSS! +20', mk4: 'MULTI-STOSS! +50', mk7: '💥 MASSAKER!! +120', mk12: '🐐 UNAUFHALTSAM!! +300',
+    bossBeaten: '🏆 BOSS BESIEGT!', bossBeatenSub: 'Du hast gewonnen!',
+    lost: '💀 VERLOREN!', lostSub: 'Der Boss hat dich besiegt',
+    pickedUp: e => `${e} aufgesammelt!`,
+    policeKO: '💥 POLIZIST AUSGEKNOCKT!', megaSmash: '💥 MEGA-STOSS!',
+    carStolen: '🚗 AUTO GEKLAUT! Einsteigen mit E',
+    carWrecked: '💥 AUTO KAPUTT!',
+    inCar: n => `🚗 <b>E</b> aussteigen · <b>W/S</b> Gas · <b>Shift</b> Turbo &nbsp;|&nbsp; 🌳 ${n}/5`,
+    caught: '🚓 ERWISCHT! -20',
+    runOver: '🚗 ÜBERFAHREN! -15',
+    timerHTML: s => `${s}<small>Sekunden</small>`,
+  },
+};
+const t = (k, ...a) => { const v = STR[LANG][k] !== undefined ? STR[LANG][k] : STR.en[k]; return typeof v === 'function' ? v(...a) : (v !== undefined ? v : k); };
+document.documentElement.lang = LANG;
+document.querySelectorAll('[data-i18n]').forEach(el => { const v = t(el.dataset.i18n); if (v != null) el.innerHTML = v; });
+document.querySelectorAll('[data-i18n-title]').forEach(el => { const v = t(el.dataset.i18nTitle); if (v != null) el.title = v; });
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  Renderer / Scene
@@ -1043,8 +1146,8 @@ function spawnBoss() {
   const mesh = buildBoss(); mesh.position.set(bx, terrainHeight(bx, bz), bz); scene.add(mesh);
   boss = { mesh, x: bx, z: bz, r: 7, hp: 100, maxHp: 100, throwCd: 2.5, hitCd: 0, bob: 0 };
   bossbarEl.style.opacity = 1; bossbarFill.style.width = '100%';
-  goalEl.textContent = '👹 Besiege den Boss – anfahren 🚗 oder abschießen 🔫!';
-  showToast('👹 DER BAUER-BOSS ERSCHEINT!'); sfx.mega(); camShake = 1; Music.bump(0.6);
+  goalEl.textContent = t('bossDefeatGoal');
+  showToast(t('bossAppears')); sfx.mega(); camShake = 1; Music.bump(0.6);
 }
 function damageBoss(amount, atPos) {
   if (!boss) return;
@@ -1079,7 +1182,7 @@ function bossThrow() {
   const vy = (target.y - start.y) / tFlight + 0.5 * 30 * tFlight;
   const vel = flat.multiplyScalar(dist / tFlight); vel.y = vy;
   bossThrows.push({ mesh, vel, spin: new THREE.Vector3((Math.random() - .5) * 6, (Math.random() - .5) * 6, (Math.random() - .5) * 6), data: a, life: 8 });
-  sfx.thud(2); showToast(`${a.emoji} ACHTUNG!`);
+  sfx.thud(2); showToast(t('watchOut', a.emoji));
 }
 function updateBossThrows(dt) {
   for (let i = bossThrows.length - 1; i >= 0; i--) {
@@ -1087,7 +1190,7 @@ function updateBossThrows(dt) {
     p.mesh.rotation.x += p.spin.x * dt; p.mesh.rotation.z += p.spin.z * dt;
     const gy = terrainHeight(p.mesh.position.x, p.mesh.position.z);
     if (!drivingCar && Math.hypot(goatState.pos.x - p.mesh.position.x, goatState.pos.z - p.mesh.position.z) < p.data.r && Math.abs(p.mesh.position.y - goatState.y) < 4) {
-      penalty(p.data.dmg, `${p.data.emoji} GETROFFEN! -${p.data.dmg}`); sfx.crash(); camShake = 0.6;
+      penalty(p.data.dmg, t('hit', p.data.emoji, p.data.dmg)); sfx.crash(); camShake = 0.6;
       const push = new THREE.Vector3(goatState.pos.x - p.mesh.position.x, 0, goatState.pos.z - p.mesh.position.z).normalize();
       goatState.pos.addScaledVector(push, 4); goatState.vy = 8;
       spawnExplosion(p.mesh.position, 8, [0xd9c469, 0x6b4a2b]); scene.remove(p.mesh); bossThrows.splice(i, 1); continue;
@@ -1207,7 +1310,7 @@ const invEl = document.getElementById('inv'), handContentEl = document.getElemen
 const slotHandEl = document.getElementById('slotHand'), slotBackEl = document.getElementById('slotBack');
 const overlay = document.getElementById('overlay'), gameoverEl = document.getElementById('gameover');
 let toastTimer = 0;
-bestEl.textContent = `🏆 Best: ${best}`;
+bestEl.textContent = t('best', best);
 
 // inventory: two slots
 const inv = { hand: null, back: null };   // each item: { kind:'pistol', emoji:'🔫', ammo:n }
@@ -1232,8 +1335,8 @@ function startGame(mode) {
   if (gameMode === 'boss') {
     timerboxEl.style.display = 'none'; invEl.style.display = 'flex';
     spawnPistolsInHouses();
-    goalEl.textContent = `🎯 Erreiche ${BOSS_GOAL} Punkte → Endboss!`;
-    showToast('👹 BOSS-MODUS');
+    goalEl.textContent = t('bossGoal', BOSS_GOAL);
+    showToast(t('bossMode'));
   } else {
     timerboxEl.style.display = 'block'; invEl.style.display = 'none'; goalEl.textContent = '';
   }
@@ -1241,19 +1344,19 @@ function startGame(mode) {
   paused = false; pauseScreenEl.classList.add('hidden'); pauseBtnEl.classList.add('show');
   goat.position.set(goatState.pos.x, goatState.y, goatState.pos.z); snapCamera(); Music.start();
 }
-function setScore() { scoreEl.innerHTML = `${score} <small>Punkte</small>`; }
+function setScore() { scoreEl.innerHTML = t('scoreHTML', score); }
 function addScore(base) {
   combo++; comboTimer = 2.5;
   const gained = base * (1 + Math.floor(combo / 3));
   score += gained; everScored = true; setScore();
-  if (combo >= 2) { comboEl.textContent = `${combo}× Combo!  +${gained}`; comboEl.style.opacity = 1; }
+  if (combo >= 2) { comboEl.textContent = t('comboHTML', combo, gained); comboEl.style.opacity = 1; }
   sfx.combo(Math.min(combo, 8));
-  if (combo === 8)  showToast('SCHÖNER LAUF!');
-  if (combo === 16) showToast('AMOK-ZIEGE! 🐐');
-  if (combo === 30) showToast('LEGENDÄR!!!');
+  if (combo === 8)  showToast(t('niceRun'));
+  if (combo === 16) showToast(t('rampage'));
+  if (combo === 30) showToast(t('legendary'));
   if (gameMode === 'boss') {
     if (!boss && score >= BOSS_GOAL) spawnBoss();
-    else if (!boss) goalEl.textContent = `🎯 ${score} / ${BOSS_GOAL} → Endboss`;
+    else if (!boss) goalEl.textContent = t('bossProgress', score, BOSS_GOAL);
   }
 }
 function penalty(amount, text) {
@@ -1267,28 +1370,28 @@ function showToast(text) { toastEl.textContent = text; toastEl.style.opacity = 1
 // UT-style multi-kill bonus: many targets in a short rolling window
 let killStreak = 0, killStreakTimer = 0;
 const MULTIKILL = [
-  { n: 2, pts: 20, msg: 'DOPPEL-STOSS! +20' },
-  { n: 4, pts: 50, msg: 'MULTI-STOSS! +50' },
-  { n: 7, pts: 120, msg: '💥 MASSAKER!! +120' },
-  { n: 12, pts: 300, msg: '🐐 UNAUFHALTSAM!! +300' },
+  { n: 2, pts: 20, msg: 'mk2' },
+  { n: 4, pts: 50, msg: 'mk4' },
+  { n: 7, pts: 120, msg: 'mk7' },
+  { n: 12, pts: 300, msg: 'mk12' },
 ];
 function registerKills(n) {
   if (!n) return;
   const prev = killStreak; killStreak += n; killStreakTimer = 1.6;
-  for (const m of MULTIKILL) if (prev < m.n && killStreak >= m.n) { score += m.pts; setScore(); showToast(m.msg); sfx.combo(8); }
+  for (const m of MULTIKILL) if (prev < m.n && killStreak >= m.n) { score += m.pts; setScore(); showToast(t(m.msg)); sfx.combo(8); }
 }
 function endGame(won, lost) {
   playing = false; paused = false; Music.stop();
   pauseBtnEl.classList.remove('show'); pauseScreenEl.classList.add('hidden');
   const t = document.getElementById('overTitle'), sub = document.getElementById('overSub'), nb = document.getElementById('newbest');
-  if (gameMode === 'boss' && won) { t.textContent = '🏆 BOSS BESIEGT!'; sub.textContent = 'Du hast gewonnen!'; [392, 523, 659, 784].forEach((f, i) => setTimeout(() => tone(f, f, 0.3, 'triangle', 0.2), i * 160)); }
-  else if (gameMode === 'boss' && lost) { t.textContent = '💀 VERLOREN!'; sub.textContent = 'Der Boss hat dich besiegt'; sfx.evilLaugh(); }
-  else { t.textContent = '⏱️ ZEIT UM!'; sub.textContent = 'Dein Ergebnis'; sfx.over(); }
+  if (gameMode === 'boss' && won) { t.textContent = STR[LANG].bossBeaten; sub.textContent = STR[LANG].bossBeatenSub; [392, 523, 659, 784].forEach((f, i) => setTimeout(() => tone(f, f, 0.3, 'triangle', 0.2), i * 160)); }
+  else if (gameMode === 'boss' && lost) { t.textContent = STR[LANG].lost; sub.textContent = STR[LANG].lostSub; sfx.evilLaugh(); }
+  else { t.textContent = STR[LANG].overTime; sub.textContent = STR[LANG].overSubTime; sfx.over(); }
   const isBest = score > best;
   if (isBest) { best = score; localStorage.setItem('leonidas_highscore', String(best)); }
-  document.getElementById('finalScore').textContent = `${score} Punkte`;
+  document.getElementById('finalScore').textContent = STR[LANG].finalScore(score);
   nb.style.display = (isBest && !lost) ? 'block' : 'none';
-  document.getElementById('bestLine').textContent = `Bester: ${best}`;
+  document.getElementById('bestLine').textContent = STR[LANG].bestLine(best);
   gameoverEl.classList.remove('hidden');
 }
 
@@ -1304,7 +1407,7 @@ function pickupItem(it) {
   if (empty(inv.hand)) inv.hand = it;        // fill / replace an empty hand
   else if (empty(inv.back)) inv.back = it;   // else fill / replace an empty back
   else inv.hand = it;                        // both loaded → replace hand
-  updateInvHUD(); sfx.combo(6); showToast(`${it.emoji} aufgesammelt!`);
+  updateInvHUD(); sfx.combo(6); showToast(t('pickedUp', it.emoji));
 }
 function swapInv() { const t = inv.hand; inv.hand = inv.back; inv.back = t; updateInvHUD(); if (inv.hand || inv.back) sfx.jump(); }
 
@@ -1328,7 +1431,7 @@ function megaAttack() {
   for (const car of cars) { if (car !== drivingCar && !car.flying && !car.broken && car.mesh.position.distanceTo(c) < radius) { knockCar(car, c, 1.6); count++; } }
   sfx.mega(); camShake = 0.7; flash('#ffffff'); Music.bump(0.3);
   if (count) { addScore(hitPolice ? 40 : 15 * Math.min(count, 6)); registerKills(count); }
-  showToast(hitPolice ? '💥 POLIZIST AUSGEKNOCKT!' : '💥 MEGA-STOSS!');
+  showToast(hitPolice ? t('policeKO') : t('megaSmash'));
 }
 function toggleCar() {
   if (drivingCar) {
@@ -1357,7 +1460,7 @@ function carjack(c) {
   const driver = { mesh, police: false, knocked: true, vel: dir.clone().multiplyScalar(10).setY(13), spin: new THREE.Vector3((Math.random()-.5)*14,0,(Math.random()-.5)*14),
     landed: false, landTime: 0, wander: 0, wanderT: 0, phase: 0, hitCd: 0 };
   people.push(driver);
-  sfx.honk(); sfx.crash(); Music.bump(0.2); showToast('🚗 AUTO GEKLAUT! Einsteigen mit E');
+  sfx.honk(); sfx.crash(); Music.bump(0.2); showToast(t('carStolen'));
 }
 function breakCar(c) {
   c.broken = true; c.onPath = false;
@@ -1366,7 +1469,7 @@ function breakCar(c) {
   // eject goat
   goat.visible = true; goatState.pos.set(c.mesh.position.x, 0, c.mesh.position.z); goatState.vy = 10; goatState.speed = 0;
   drivingCar = null; incarEl.style.opacity = 0;
-  penalty(40, '💥 AUTO KAPUTT!'); sfx.crash(); camShake = 0.9;
+  penalty(40, t('carWrecked')); sfx.crash(); camShake = 0.9;
   setTimeout(() => { if (playing) spawnAICar(); }, 3000);
 }
 function knockPerson(p, fromPos, power) {
@@ -1571,7 +1674,7 @@ function updateDriving(dt) {
   c.treeHits = c.treeHits.filter(t => clock.elapsedTime - t < 20);
   if (c.treeHits.length > 5) { breakCar(c); return; }
   incarEl.style.opacity = 1;
-  incarEl.innerHTML = `🚗 <b>E</b> aussteigen · <b>W/S</b> Gas · <b>Shift</b> Turbo &nbsp;|&nbsp; 🌳 ${c.treeHits.length}/5`;
+  incarEl.innerHTML = t('inCar', c.treeHits.length);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1593,7 +1696,7 @@ function updatePeople(dt) {
         to.normalize(); p.mesh.position.addScaledVector(to, 5.5 * dt); p.mesh.rotation.y = Math.atan2(to.x, to.z);
         if (d < 2.6 && p.hitCd <= 0 && goatState.hitCooldown <= 0) {
           p.hitCd = 1.2; goatState.hitCooldown = 1.0;
-          penalty(20, '🚓 ERWISCHT! -20'); sfx.siren(); camShake = 0.4;
+          penalty(20, t('caught')); sfx.siren(); camShake = 0.4;
           const push = p.mesh.position.clone().sub(goatState.pos).setY(0).normalize();
           goatState.pos.addScaledVector(push, -4); goatState.vy = 7;
         }
@@ -1647,7 +1750,7 @@ function updateAICars(dt) {
     c.heading = Math.atan2(p.tx * c.dir, p.tz * c.dir); c.mesh.rotation.y = c.heading;
     // run into goat -> penalty
     if (!drivingCar && goatState.hitCooldown <= 0 && c.mesh.position.distanceTo(goatState.pos) < 3.2) {
-      goatState.hitCooldown = 1.2; penalty(15, '🚗 ÜBERFAHREN! -15'); sfx.crash(); camShake = 0.5;
+      goatState.hitCooldown = 1.2; penalty(15, t('runOver')); sfx.crash(); camShake = 0.5;
       const push = goatState.pos.clone().sub(c.mesh.position).setY(0).normalize();
       goatState.pos.addScaledVector(push, 4); goatState.vy = 8;
     }
@@ -1723,7 +1826,7 @@ function update(dt) {
     timeLeft -= dt;
     if (timeLeft <= 0) { timeLeft = 0; endGame(); }
     const secs = Math.ceil(timeLeft);
-    timerEl.innerHTML = `${secs}<small>Sekunden</small>`; timerEl.classList.toggle('low', secs <= 15);
+    timerEl.innerHTML = t('timerHTML', secs); timerEl.classList.toggle('low', secs <= 15);
   }
 }
 function animate() {

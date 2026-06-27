@@ -1,9 +1,14 @@
 # 🐐 Golden Goat
 
+> 🎨 **Game designed by Leonidas (10 years old).**
+
 A browser-based 3D third-person "goat simulator" built with [Three.js](https://threejs.org).
 Rampage through a city as a golden goat: headbutt people and objects, steal and drive
 cars, launch off ramps, swim in the lake — and in **Boss Mode**, find pistols and take
 down a giant farmer end boss.
+
+The interface is available in **English and German** and is selected automatically from
+the browser language (anything other than German falls back to English).
 
 ## ▶ Play
 
@@ -16,7 +21,7 @@ No install needed — it runs entirely in the browser.
 **Keyboard**
 - `W/S` move/drive · `A/D` turn/steer
 - `Space` jump (double-jump; land on a car to steal it)
-- `Shift` Mega-Stoß (goat) / Turbo (car)
+- `Shift` Mega-smash (goat) / Turbo (car)
 - `E` enter/exit car · `F` shoot · `Q` swap inventory
 - `P` / `Esc` pause
 
