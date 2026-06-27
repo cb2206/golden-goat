@@ -275,7 +275,10 @@ Shared by goat & car each frame for the active entity:
 ## 13. Changelog (most recent first)
 - **Pause + touch + publish:** added pause mode (`P`/`Esc`/⏸ button, freezes loop &
   mutes music); on-screen touch controls (virtual joystick + action buttons) auto-enabled
-  on phones/tablets; published to a public GitHub repo + GitHub Pages.
+  on phones/tablets; published to a public GitHub repo + GitHub Pages. Added a custom
+  golden-goat icon (`icon.svg` → `apple-touch-icon.png`/`icon-192/512.png`), a web app
+  manifest (installable / add-to-home-screen), and an Open Graph / Twitter link-preview
+  image (`og.png`). Icons/PNGs are rendered from the SVGs via `qlmanage`.
 - **Fix:** entering cars (`E`) used 3D distance, so terrain height (cars sit on the
   ground, the goat's `pos.y` stays 0) pushed every car out of range. Now uses horizontal
   distance with a ~9-unit reach, so you can enter from any side, with some distance.

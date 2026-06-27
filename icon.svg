@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#43c8d6"/>
+      <stop offset="55%" stop-color="#2a7fc4"/>
+      <stop offset="100%" stop-color="#173a72"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe9a8"/>
+      <stop offset="48%" stop-color="#f4c64a"/>
+      <stop offset="100%" stop-color="#cf941d"/>
+    </linearGradient>
+    <linearGradient id="goldDk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0cf78"/>
+      <stop offset="100%" stop-color="#b07d1c"/>
+    </linearGradient>
+    <linearGradient id="horn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#efe0bb"/>
+      <stop offset="100%" stop-color="#a9822f"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="512" height="512" rx="108" fill="url(#bg)"/>
+  <ellipse cx="256" cy="452" rx="140" ry="22" fill="#000" opacity="0.18"/>
+
+  <!-- horns -->
+  <g stroke="#7a5a16" stroke-width="5" stroke-linejoin="round">
+    <path d="M196 182 C150 150 132 104 150 62 C120 96 110 150 132 196 C150 230 178 214 196 182 Z" fill="url(#horn)"/>
+    <path d="M316 182 C362 150 380 104 362 62 C392 96 402 150 380 196 C362 230 334 214 316 182 Z" fill="url(#horn)"/>
+  </g>
+
+  <!-- ears -->
+  <g stroke="#7a5a16" stroke-width="5">
+    <ellipse cx="158" cy="246" rx="44" ry="24" fill="url(#goldDk)" transform="rotate(-28 158 246)"/>
+    <ellipse cx="354" cy="246" rx="44" ry="24" fill="url(#goldDk)" transform="rotate(28 354 246)"/>
+  </g>
+
+  <!-- head -->
+  <path d="M256 150 C322 150 352 214 346 282 C342 350 304 408 256 408 C208 408 170 350 166 282 C160 214 190 150 256 150 Z"
+        fill="url(#gold)" stroke="#7a5a16" stroke-width="6"/>
+
+  <!-- snout -->
+  <ellipse cx="256" cy="350" rx="62" ry="48" fill="#fbe4a6" stroke="#7a5a16" stroke-width="5"/>
+  <ellipse cx="232" cy="356" rx="9" ry="6" fill="#5b3c12"/>
+  <ellipse cx="280" cy="356" rx="9" ry="6" fill="#5b3c12"/>
+
+  <!-- eyes -->
+  <ellipse cx="214" cy="268" rx="20" ry="24" fill="#2b1d08"/>
+  <ellipse cx="298" cy="268" rx="20" ry="24" fill="#2b1d08"/>
+  <circle cx="221" cy="260" r="6" fill="#fff" opacity="0.9"/>
+  <circle cx="305" cy="260" r="6" fill="#fff" opacity="0.9"/>
+
+  <!-- beard -->
+  <path d="M232 398 C238 446 252 470 256 486 C260 470 274 446 280 398 C272 410 240 410 232 398 Z"
+        fill="url(#goldDk)" stroke="#7a5a16" stroke-width="4"/>
+
+  <!-- shine -->
+  <path d="M210 175 C195 200 188 235 192 270" fill="none" stroke="#fff7df" stroke-width="7" stroke-linecap="round" opacity="0.5"/>
+</svg>
