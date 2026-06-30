@@ -1425,10 +1425,10 @@ function megaAttack() {
   let count = 0, hitPolice = false;
   for (const p of people) {
     if (p.knocked) continue;
-    if (p.mesh.position.distanceTo(c) < radius) { knockPerson(p, c, 2.4); count++; if (p.police) hitPolice = true; }
+    if (horizDist(p.mesh.position, c) < radius) { knockPerson(p, c, 2.4); count++; if (p.police) hitPolice = true; }
   }
-  for (const pr of props) { if (!pr.knocked && pr.mesh.position.distanceTo(c) < radius) { knockProp(pr, c, 2.4); count++; } }
-  for (const car of cars) { if (car !== drivingCar && !car.flying && !car.broken && car.mesh.position.distanceTo(c) < radius) { knockCar(car, c, 1.6); count++; } }
+  for (const pr of props) { if (!pr.knocked && horizDist(pr.mesh.position, c) < radius) { knockProp(pr, c, 2.4); count++; } }
+  for (const car of cars) { if (car !== drivingCar && !car.flying && !car.broken && horizDist(car.mesh.position, c) < radius) { knockCar(car, c, 1.6); count++; } }
   sfx.mega(); camShake = 0.7; flash('#ffffff'); Music.bump(0.3);
   if (count) { addScore(hitPolice ? 40 : 15 * Math.min(count, 6)); registerKills(count); }
   showToast(hitPolice ? t('policeKO') : t('megaSmash'));
@@ -1569,6 +1569,8 @@ function updateHouseRoofs() {
   }
 }
 function approachAngle(cur, target, rate, dt) { let d = target - cur; d = Math.atan2(Math.sin(d), Math.cos(d)); return cur + d * (1 - Math.exp(-rate * dt)); }
+// horizontal (XZ) distance — used for goat-centred hits since goatState.pos.y is always 0
+function horizDist(a, b) { return Math.hypot(a.x - b.x, a.z - b.z); }
 function integrateFlyer(o, dt, restY) {
   const v = o.fvel || o.vel, s = o.fspin || o.spin;
   const ry = restY !== undefined ? restY : terrainHeight(o.mesh.position.x, o.mesh.position.z);
@@ -1613,13 +1615,15 @@ function updateGoat(dt) {
   goat.rotation.y = goatState.facing;
 
   // AUTOMATIC horns: knock nearby civilians + props (police resist plain horns)
+  // NB: compare on the XZ plane — goatState.pos.y is always 0 while the goat's
+  // real height lives in goatState.y, so a 3D distanceTo() would never trigger.
   const sp = Math.abs(goatState.speed);
-  if (sp > 3 && !goatState.airborne) {
+  if (sp > 1.5 && !goatState.airborne) {
     let kills = 0;
     for (const p of people) { if (p.knocked || p.police) continue;
-      if (p.mesh.position.distanceTo(goatState.pos) < 2.9) { knockPerson(p, goatState.pos, 1.1); addScore(5); kills++; } }
+      if (horizDist(p.mesh.position, goatState.pos) < 2.9) { knockPerson(p, goatState.pos, 1.1); addScore(5); kills++; } }
     for (const pr of props) { if (pr.knocked) continue;
-      if (pr.mesh.position.distanceTo(goatState.pos) < 2.9) { knockProp(pr, goatState.pos, 1.0); addScore(5); kills++; } }
+      if (horizDist(pr.mesh.position, goatState.pos) < 2.9) { knockProp(pr, goatState.pos, 1.0); addScore(5); kills++; } }
     if (kills) { goatState.attack = 1; sfx.thud(1); registerKills(kills); }
   }
 
